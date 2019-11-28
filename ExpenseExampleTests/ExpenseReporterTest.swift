@@ -9,12 +9,13 @@
 import XCTest
 @testable import ExpenseExample
 
-class ExpenseReportTest: XCTestCase {
-    var report: ExpenseReport!
+// 18. Rename File: [ExpenseReporter]
+class ExpenseReporterTest: XCTestCase {
+    var report: ExpenseReporter!
     var printer: MockReportPrinter!
 
     override func setUp() {
-        report = ExpenseReport()
+        report = ExpenseReporter()
         printer = MockReportPrinter()
     }
 

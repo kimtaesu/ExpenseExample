@@ -8,7 +8,8 @@
 
 import Foundation
 
-class ExpenseReport {
+// 18. Rename File: [ExpenseReporter]
+class ExpenseReporter {
     private var expenses = [Expense]()
     var mealExpenses = 0
     var total = 0
