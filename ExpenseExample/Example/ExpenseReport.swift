@@ -41,7 +41,11 @@ class ExpenseReport {
             
             total += expense.amount
         }
-        
+        // 2. Extract Methd: printTotalas
+        printTotals(printer: printer, mealExpenses: mealExpenses, total: total)
+    }
+
+    private func printTotals(printer: ReportPrinter, mealExpenses: Int, total: Int) {
         printer.print(text: String(format: "\nMeal expenses $%.02f", Double(mealExpenses) / 100.0))
         printer.print(text: String(format: "\nTotal $%.02f", Double(total) / 100.0))
     }
