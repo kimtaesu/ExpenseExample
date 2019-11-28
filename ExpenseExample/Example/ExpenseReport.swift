@@ -44,7 +44,8 @@ class ExpenseReport {
             printer.print(
                     text: String(format: "%@\t%@\t$%.02f\n",
                             // 10. Extract Method: isOverage
-                            expense.isOverage(expense: expense) ? "X" : " ", getName(expense: expense), Double(expense.amount) / 100.0))
+                            expense.isOverage(expense: expense) ? "X" : " ", expense.getName(expense: expense), Double(expense.amount) / 100.0))
+            // 14 Move: Other Method [Expense.getName]
 
             // 9. Inline name: getName(expense: expense)
         }
@@ -54,20 +55,6 @@ class ExpenseReport {
 //        (expense.type == .dinner && expense.amount > 5000) ||
 //                (expense.type == .breakfast && expense.amount > 1000)
 //    }
-
-    private func getName(expense: Expense) -> String {
-        var name = "TILT"
-
-        switch expense.type {
-        case .dinner:
-            name = "Dinner"
-        case .breakfast:
-            name = "Breakfast"
-        case .carRental:
-            name = "Car Rental"
-        }
-        return name
-    }
 
     private func totalsUpExpenses() {
         for expense in expenses {

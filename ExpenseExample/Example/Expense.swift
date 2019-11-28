@@ -27,4 +27,18 @@ class Expense {
         (expense.type == .dinner && expense.amount > 5000) ||
                 (expense.type == .breakfast && expense.amount > 1000)
     }
+
+    func getName(expense: Expense) -> String {
+        var name = "TILT"
+
+        switch expense.type {
+        case .dinner:
+            name = "Dinner"
+        case .breakfast:
+            name = "Breakfast"
+        case .carRental:
+            name = "Car Rental"
+        }
+        return name
+    }
 }
