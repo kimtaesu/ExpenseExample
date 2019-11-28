@@ -10,13 +10,19 @@ import XCTest
 @testable import ExpenseExample
 
 // 18. Rename File: [ExpenseReporter]
+
+// 19: Delegate: [totalsUpExpenses, totalUpExpense, addExpense]
+//    [expenses: List, mealExpenses: Int, total: Int]
+// Delegate 기능이 없음
 class ExpenseReporterTest: XCTestCase {
     var report: ExpenseReporter!
     var printer: MockReportPrinter!
+    var expense: ExpenseReport!
 
     override func setUp() {
         report = ExpenseReporter()
         printer = MockReportPrinter()
+        expense = report.expenseReport
     }
 
     func testPrintEmpty() {
@@ -31,7 +37,7 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testPrintOneDinner() {
-        report.addExpense(expense: Expense(type: .dinner, amount: 1678))
+        expense.addExpense(expense: Expense(type: .dinner, amount: 1678))
         report.printReport(printer: printer)
 
 
@@ -45,8 +51,8 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testTwoMeals() {
-        report.addExpense(expense: Expense(type: .dinner, amount: 1000))
-        report.addExpense(expense: Expense(type: .breakfast, amount: 500))
+        expense.addExpense(expense: Expense(type: .dinner, amount: 1000))
+        expense.addExpense(expense: Expense(type: .breakfast, amount: 500))
         report.printReport(printer: printer)
 
 
@@ -62,9 +68,9 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testTwoMealsAndCarRental() {
-        report.addExpense(expense: Expense(type: .dinner, amount: 1000))
-        report.addExpense(expense: Expense(type: .breakfast, amount: 500))
-        report.addExpense(expense: Expense(type: .carRental, amount: 50000))
+        expense.addExpense(expense: Expense(type: .dinner, amount: 1000))
+        expense.addExpense(expense: Expense(type: .breakfast, amount: 500))
+        expense.addExpense(expense: Expense(type: .carRental, amount: 50000))
         report.printReport(printer: printer)
 
 
@@ -80,10 +86,10 @@ class ExpenseReporterTest: XCTestCase {
     }
     
     func testOverages() {
-        report.addExpense(expense: Expense(type: .breakfast, amount: 1000))
-        report.addExpense(expense: Expense(type: .breakfast, amount: 1001))
-        report.addExpense(expense: Expense(type: .dinner, amount: 5000))
-        report.addExpense(expense: Expense(type: .dinner, amount: 5001))
+        expense.addExpense(expense: Expense(type: .breakfast, amount: 1000))
+        expense.addExpense(expense: Expense(type: .breakfast, amount: 1001))
+        expense.addExpense(expense: Expense(type: .dinner, amount: 5000))
+        expense.addExpense(expense: Expense(type: .dinner, amount: 5001))
         report.printReport(printer: printer)
 
 

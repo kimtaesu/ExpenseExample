@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0CF83D238FCFD500B0D472 /* ExpenseReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CF83C238FCFD500B0D472 /* ExpenseReporter.swift */; };
+		2F0CF83F238FCFDA00B0D472 /* ExpenseReporterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0CF83E238FCFDA00B0D472 /* ExpenseReporterTest.swift */; };
 		2FECCCF0238F7B2A003DF3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCCEF238F7B2A003DF3E5 /* AppDelegate.swift */; };
 		2FECCCF2238F7B2A003DF3E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCCF1238F7B2A003DF3E5 /* SceneDelegate.swift */; };
 		2FECCCF4238F7B2A003DF3E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCCF3238F7B2A003DF3E5 /* ViewController.swift */; };
 		2FECCCF7238F7B2A003DF3E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FECCCF5238F7B2A003DF3E5 /* Main.storyboard */; };
 		2FECCCF9238F7B2B003DF3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FECCCF8238F7B2B003DF3E5 /* Assets.xcassets */; };
 		2FECCCFC238F7B2B003DF3E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FECCCFA238F7B2B003DF3E5 /* LaunchScreen.storyboard */; };
-		2FECCD15238F7B45003DF3E5 /* ExpenseReportTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD12238F7B45003DF3E5 /* ExpenseReportTest.swift */; };
 		2FECCD16238F7B45003DF3E5 /* MockReportPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD13238F7B45003DF3E5 /* MockReportPrinter.swift */; };
 		2FECCD1B238F7B63003DF3E5 /* ReportPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD18238F7B63003DF3E5 /* ReportPrinter.swift */; };
-		2FECCD1C238F7B63003DF3E5 /* ExpenseReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD19238F7B63003DF3E5 /* ExpenseReport.swift */; };
 		2FECCD1D238F7B63003DF3E5 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD1A238F7B63003DF3E5 /* Expense.swift */; };
 		69B49F57EC20582A7C95B1EC /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 69B49E8BCE69E07C6AF1E0BE /* Readme.md */; };
 /* End PBXBuildFile section */
@@ -32,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0CF83C238FCFD500B0D472 /* ExpenseReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseReporter.swift; sourceTree = "<group>"; };
+		2F0CF83E238FCFDA00B0D472 /* ExpenseReporterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseReporterTest.swift; sourceTree = "<group>"; };
 		2FECCCEC238F7B2A003DF3E5 /* ExpenseExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FECCCEF238F7B2A003DF3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FECCCF1238F7B2A003DF3E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +44,8 @@
 		2FECCCFD238F7B2B003DF3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FECCD02238F7B2B003DF3E5 /* ExpenseExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FECCD08238F7B2B003DF3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2FECCD12238F7B45003DF3E5 /* ExpenseReportTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseReportTest.swift; sourceTree = "<group>"; };
 		2FECCD13238F7B45003DF3E5 /* MockReportPrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockReportPrinter.swift; sourceTree = "<group>"; };
 		2FECCD18238F7B63003DF3E5 /* ReportPrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPrinter.swift; sourceTree = "<group>"; };
-		2FECCD19238F7B63003DF3E5 /* ExpenseReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseReport.swift; sourceTree = "<group>"; };
 		2FECCD1A238F7B63003DF3E5 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		69B49E8BCE69E07C6AF1E0BE /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +105,7 @@
 		2FECCD05238F7B2B003DF3E5 /* ExpenseExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				2FECCD12238F7B45003DF3E5 /* ExpenseReportTest.swift */,
+				2F0CF83E238FCFDA00B0D472 /* ExpenseReporterTest.swift */,
 				2FECCD13238F7B45003DF3E5 /* MockReportPrinter.swift */,
 				2FECCD08238F7B2B003DF3E5 /* Info.plist */,
 			);
@@ -115,8 +115,8 @@
 		2FECCD17238F7B5C003DF3E5 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				2F0CF83C238FCFD500B0D472 /* ExpenseReporter.swift */,
 				2FECCD18238F7B63003DF3E5 /* ReportPrinter.swift */,
-				2FECCD19238F7B63003DF3E5 /* ExpenseReport.swift */,
 				2FECCD1A238F7B63003DF3E5 /* Expense.swift */,
 			);
 			path = Example;
@@ -224,10 +224,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FECCD1D238F7B63003DF3E5 /* Expense.swift in Sources */,
+				2F0CF83D238FCFD500B0D472 /* ExpenseReporter.swift in Sources */,
 				2FECCCF4238F7B2A003DF3E5 /* ViewController.swift in Sources */,
 				2FECCCF0238F7B2A003DF3E5 /* AppDelegate.swift in Sources */,
 				2FECCD1B238F7B63003DF3E5 /* ReportPrinter.swift in Sources */,
-				2FECCD1C238F7B63003DF3E5 /* ExpenseReport.swift in Sources */,
 				2FECCCF2238F7B2A003DF3E5 /* SceneDelegate.swift in Sources */,
 				69B49F57EC20582A7C95B1EC /* Readme.md in Sources */,
 			);
@@ -238,7 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FECCD16238F7B45003DF3E5 /* MockReportPrinter.swift in Sources */,
-				2FECCD15238F7B45003DF3E5 /* ExpenseReportTest.swift in Sources */,
+				2F0CF83F238FCFDA00B0D472 /* ExpenseReporterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

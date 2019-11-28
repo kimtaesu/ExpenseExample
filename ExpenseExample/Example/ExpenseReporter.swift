@@ -8,22 +8,56 @@
 
 import Foundation
 
-// 18. Rename File: [ExpenseReporter]
-class ExpenseReporter {
-    private var expenses = [Expense]()
+
+// 19: Delegate: [totalsUpExpenses, totalUpExpense, addExpense]
+//    [expenses: List, mealExpenses: Int, total: Int]
+// Delegate 기능이 없음
+class ExpenseReport {
+    var expenses = [Expense]()
     var mealExpenses = 0
     var total = 0
 
+    func totalsUpExpenses() {
+        for expense in expenses {
+            // 11. Extract Method: totalUpExpense
+            totalUpExpense(expense: expense)
+        }
+    }
+
+    func totalUpExpense(expense: Expense) {
+        // 12. Extract Method: isMeal
+        // 15 Move: Other Method [Expense.isMeal]
+        if expense.isMeal(expense: expense) {
+            mealExpenses += expense.amount
+        }
+
+        total += expense.amount
+    }
+
+    func addExpense(expense: Expense) {
+        expenses.append(expense)
+    }
+}
+
+// 18. Rename File: [ExpenseReporter]
+
+// 19: Delegate: [totalsUpExpenses, totalUpExpense, addExpense]
+//    [expenses: List, mealExpenses: Int, total: Int]
+// Delegate 기능이 없음
+class ExpenseReporter {
     var printer: ReportPrinter!
+    let expenseReport = ExpenseReport()
     // 6. Change Signature 기능이 없음
 
+
     func printReport(printer: ReportPrinter) {
+
         self.printer = printer
 
         // 7. Extract Method: printExpensesAndTotals
         printExpensesAndTotals()
         // 2. Extract Methd: printTotalas
-        printTotals(mealExpenses: mealExpenses, total: total)
+        printTotals(mealExpenses: expenseReport.mealExpenses, total: expenseReport.total)
     }
 
     private func printExpensesAndTotals() { // 1. Extract Methd: printHeader
@@ -32,7 +66,7 @@ class ExpenseReporter {
         // 3. 책임 분리: [비용 계산, 비용 출력]
 
         // 4. Extract Method: totalsUpExpenses
-        totalsUpExpenses()
+        expenseReport.totalsUpExpenses()
 
         // 5. Extract Method: printExpenses
         printExpenses()
@@ -40,7 +74,7 @@ class ExpenseReporter {
 
     // 6. Change Signature 기능이 없음
     private func printExpenses() {
-        for expense in expenses {
+        for expense in expenseReport.expenses {
             // 8. Extract Method: getName
             printer.print(
                     text: String(format: "%@\t%@\t$%.02f\n",
@@ -50,28 +84,6 @@ class ExpenseReporter {
 
             // 9. Inline name: getName(expense: expense)
         }
-    }
-
-//    private func isOverage(expense: Expense) -> Bool {
-//        (expense.type == .dinner && expense.amount > 5000) ||
-//                (expense.type == .breakfast && expense.amount > 1000)
-//    }
-
-    private func totalsUpExpenses() {
-        for expense in expenses {
-            // 11. Extract Method: totalUpExpense
-            totalUpExpense(expense: expense)
-        }
-    }
-
-    private func totalUpExpense(expense: Expense) {
-        // 12. Extract Method: isMeal
-        // 15 Move: Other Method [Expense.isMeal]
-        if expense.isMeal(expense: expense) {
-            mealExpenses += expense.amount
-        }
-
-        total += expense.amount
     }
 
     // 6. Change Signature 기능이 없음
@@ -85,9 +97,6 @@ class ExpenseReporter {
         printer.print(text: "Expenses \(getDate())\n")
     }
 
-    func addExpense(expense: Expense) {
-        expenses.append(expense)
-    }
 
     private func getDate() -> String {
         return "9/12/2002"
