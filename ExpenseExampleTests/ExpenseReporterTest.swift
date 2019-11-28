@@ -37,7 +37,8 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testPrintOneDinner() {
-        expense.addExpense(expense: Expense(type: .dinner, amount: 1678))
+        // 20 OCP 위반: Test를 수정하여 Expense가 아니라 필요한 타입의 서브 클래스를 생성하도록 한다.
+        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 1678))
         report.printReport(printer: printer)
 
 
@@ -51,8 +52,8 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testTwoMeals() {
-        expense.addExpense(expense: Expense(type: .dinner, amount: 1000))
-        expense.addExpense(expense: Expense(type: .breakfast, amount: 500))
+        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 1000))
+        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 500))
         report.printReport(printer: printer)
 
 
@@ -68,9 +69,9 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testTwoMealsAndCarRental() {
-        expense.addExpense(expense: Expense(type: .dinner, amount: 1000))
-        expense.addExpense(expense: Expense(type: .breakfast, amount: 500))
-        expense.addExpense(expense: Expense(type: .carRental, amount: 50000))
+        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 1000))
+        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 500))
+        expense.addExpense(expense: CarRentalExpense(type: .carRental, amount: 50000))
         report.printReport(printer: printer)
 
 
@@ -86,10 +87,10 @@ class ExpenseReporterTest: XCTestCase {
     }
     
     func testOverages() {
-        expense.addExpense(expense: Expense(type: .breakfast, amount: 1000))
-        expense.addExpense(expense: Expense(type: .breakfast, amount: 1001))
-        expense.addExpense(expense: Expense(type: .dinner, amount: 5000))
-        expense.addExpense(expense: Expense(type: .dinner, amount: 5001))
+        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 1000))
+        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 1001))
+        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 5000))
+        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 5001))
         report.printReport(printer: printer)
 
 
