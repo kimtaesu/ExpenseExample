@@ -41,13 +41,12 @@ class ExpenseReport {
     private func printExpenses() {
         for expense in expenses {
             // 8. Extract Method: getName
-            var name = getName(expense: expense)
-
             printer.print(
                     text: String(format: "%@\t%@\t$%.02f\n",
                             ((expense.type == .dinner && expense.amount > 5000) ||
-                                    (expense.type == .breakfast && expense.amount > 1000)) ? "X" : " ", name, Double(expense.amount) / 100.0))
+                                    (expense.type == .breakfast && expense.amount > 1000)) ? "X" : " ", getName(expense: expense), Double(expense.amount) / 100.0))
 
+            // 9. Inline name: getName(expense: expense)
         }
     }
 
