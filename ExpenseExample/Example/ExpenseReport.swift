@@ -43,11 +43,16 @@ class ExpenseReport {
             // 8. Extract Method: getName
             printer.print(
                     text: String(format: "%@\t%@\t$%.02f\n",
-                            ((expense.type == .dinner && expense.amount > 5000) ||
-                                    (expense.type == .breakfast && expense.amount > 1000)) ? "X" : " ", getName(expense: expense), Double(expense.amount) / 100.0))
+                            // 10. Extract Method: isOverage
+                            isOverage(expense: expense) ? "X" : " ", getName(expense: expense), Double(expense.amount) / 100.0))
 
             // 9. Inline name: getName(expense: expense)
         }
+    }
+
+    private func isOverage(expense: Expense) -> Bool {
+        (expense.type == .dinner && expense.amount > 5000) ||
+                (expense.type == .breakfast && expense.amount > 1000)
     }
 
     private func getName(expense: Expense) -> String {
