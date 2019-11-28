@@ -10,23 +10,17 @@ import Foundation
 
 class ExpenseReport {
     private var expenses = [Expense]()
+    var mealExpenses = 0
+    var total = 0
 
     func printReport(printer: ReportPrinter) {
-        var total = 0
-        var mealExpenses = 0
-
         // 1. Extract Methd: printHeader
         printHeader(printer: printer)
 
         // 3. 책임 분리: [비용 계산, 비용 출력]
-        for expense in expenses {
 
-            if expense.type == .breakfast || expense.type == .dinner {
-                mealExpenses += expense.amount
-            }
-
-            total += expense.amount
-        }
+        // 4. Extract Method: totalsUpExpenses
+        totalsUpExpenses()
 
         for expense in expenses {
             var name = "TILT"
@@ -48,6 +42,17 @@ class ExpenseReport {
         }
         // 2. Extract Methd: printTotalas
         printTotals(printer: printer, mealExpenses: mealExpenses, total: total)
+    }
+
+    private func totalsUpExpenses() {
+        for expense in expenses {
+
+            if expense.type == .breakfast || expense.type == .dinner {
+                mealExpenses += expense.amount
+            }
+
+            total += expense.amount
+        }
     }
 
     private func printTotals(printer: ReportPrinter, mealExpenses: Int, total: Int) {
