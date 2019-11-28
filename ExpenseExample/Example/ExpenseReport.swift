@@ -40,16 +40,8 @@ class ExpenseReport {
     // 6. Change Signature 기능이 없음
     private func printExpenses() {
         for expense in expenses {
-            var name = "TILT"
-
-            switch expense.type {
-            case .dinner:
-                name = "Dinner"
-            case .breakfast:
-                name = "Breakfast"
-            case .carRental:
-                name = "Car Rental"
-            }
+            // 8. Extract Method: getName
+            var name = getName(expense: expense)
 
             printer.print(
                     text: String(format: "%@\t%@\t$%.02f\n",
@@ -57,6 +49,20 @@ class ExpenseReport {
                                     (expense.type == .breakfast && expense.amount > 1000)) ? "X" : " ", name, Double(expense.amount) / 100.0))
 
         }
+    }
+
+    private func getName(expense: Expense) -> String {
+        var name = "TILT"
+
+        switch expense.type {
+        case .dinner:
+            name = "Dinner"
+        case .breakfast:
+            name = "Breakfast"
+        case .carRental:
+            name = "Car Rental"
+        }
+        return name
     }
 
     private func totalsUpExpenses() {
