@@ -41,4 +41,8 @@ class Expense {
         }
         return name
     }
+
+    func isMeal(expense: Expense) -> Bool {
+        expense.type == .breakfast || expense.type == .dinner
+    }
 }

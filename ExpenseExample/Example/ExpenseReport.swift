@@ -65,15 +65,12 @@ class ExpenseReport {
 
     private func totalUpExpense(expense: Expense) {
         // 12. Extract Method: isMeal
-        if isMeal(expense: expense) {
+        // 15 Move: Other Method [Expense.isMeal]
+        if expense.isMeal(expense: expense) {
             mealExpenses += expense.amount
         }
 
         total += expense.amount
-    }
-
-    private func isMeal(expense: Expense) -> Bool {
-        return expense.type == .breakfast || expense.type == .dinner
     }
 
     // 6. Change Signature 기능이 없음
