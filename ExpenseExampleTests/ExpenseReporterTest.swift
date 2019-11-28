@@ -10,13 +10,24 @@ import XCTest
 @testable import ExpenseExample
 
 // 21 Create Class File
+
+// 22 create Init()
 class DinnerExpense: Expense {
+    init(amount: Int) {
+        super.init(type: .dinner, amount: amount)
+    }
 }
 
 class BreakfastExpense: Expense {
+    init(amount: Int) {
+        super.init(type: .breakfast, amount: amount)
+    }
 }
 
 class CarRentalExpense: Expense {
+    init(amount: Int) {
+        super.init(type: .carRental, amount: amount)
+    }
 }
 
 
@@ -49,7 +60,7 @@ class ExpenseReporterTest: XCTestCase {
 
     func testPrintOneDinner() {
         // 20 OCP 위반: Test를 수정하여 Expense가 아니라 필요한 타입의 서브 클래스를 생성하도록 한다.
-        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 1678))
+        expense.addExpense(expense: DinnerExpense(amount: 1678))
         report.printReport(printer: printer)
 
 
@@ -63,8 +74,8 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testTwoMeals() {
-        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 1000))
-        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 500))
+        expense.addExpense(expense: DinnerExpense(amount: 1000))
+        expense.addExpense(expense: BreakfastExpense(amount: 500))
         report.printReport(printer: printer)
 
 
@@ -80,9 +91,9 @@ class ExpenseReporterTest: XCTestCase {
     }
 
     func testTwoMealsAndCarRental() {
-        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 1000))
-        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 500))
-        expense.addExpense(expense: CarRentalExpense(type: .carRental, amount: 50000))
+        expense.addExpense(expense: DinnerExpense(amount: 1000))
+        expense.addExpense(expense: BreakfastExpense(amount: 500))
+        expense.addExpense(expense: CarRentalExpense(amount: 50000))
         report.printReport(printer: printer)
 
 
@@ -98,10 +109,10 @@ class ExpenseReporterTest: XCTestCase {
     }
     
     func testOverages() {
-        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 1000))
-        expense.addExpense(expense: BreakfastExpense(type: .breakfast, amount: 1001))
-        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 5000))
-        expense.addExpense(expense: DinnerExpense(type: .dinner, amount: 5001))
+        expense.addExpense(expense: BreakfastExpense(amount: 1000))
+        expense.addExpense(expense: BreakfastExpense(amount: 1001))
+        expense.addExpense(expense: DinnerExpense(amount: 5000))
+        expense.addExpense(expense: DinnerExpense(amount: 5001))
         report.printReport(printer: printer)
 
 
