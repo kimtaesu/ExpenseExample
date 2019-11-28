@@ -18,16 +18,17 @@ class DinnerExpense: Expense {
         super.init(type: .dinner, amount: amount)
     }
 
+    // 24. Implement Child funcs [isMeal, getName, isOverage]
     override func isMeal(expense: Expense) -> Bool {
-        return super.isMeal(expense: expense)
+        return true
     }
 
     override func getName(expense: Expense) -> String {
-        return super.getName(expense: expense)
+        return "Dinner"
     }
 
     override func isOverage(expense: Expense) -> Bool {
-        return super.isOverage(expense: expense)
+        return expense.amount > 5000
     }
 }
 
@@ -36,15 +37,15 @@ class BreakfastExpense: Expense {
         super.init(type: .breakfast, amount: amount)
     }
     override func isMeal(expense: Expense) -> Bool {
-        return super.isMeal(expense: expense)
+        return true
     }
 
     override func getName(expense: Expense) -> String {
-        return super.getName(expense: expense)
+        return "Breakfast"
     }
 
     override func isOverage(expense: Expense) -> Bool {
-        return super.isOverage(expense: expense)
+        return expense.amount > 1000
     }
 }
 
@@ -53,18 +54,17 @@ class CarRentalExpense: Expense {
         super.init(type: .carRental, amount: amount)
     }
     override func isMeal(expense: Expense) -> Bool {
-        return super.isMeal(expense: expense)
+        return false
     }
 
     override func getName(expense: Expense) -> String {
-        return super.getName(expense: expense)
+        return "Car Rental"
     }
 
     override func isOverage(expense: Expense) -> Bool {
-        return super.isOverage(expense: expense)
+        return false
     }
 }
-
 
 // 18. Rename File: [ExpenseReporter]
 
