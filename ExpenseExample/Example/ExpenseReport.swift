@@ -17,12 +17,18 @@ class ExpenseReport {
 
         // 1. Extract Methd: printHeader
         printHeader(printer: printer)
+
+        // 3. 책임 분리: [비용 계산, 비용 출력]
         for expense in expenses {
 
             if expense.type == .breakfast || expense.type == .dinner {
                 mealExpenses += expense.amount
             }
 
+            total += expense.amount
+        }
+
+        for expense in expenses {
             var name = "TILT"
 
             switch expense.type {
@@ -33,13 +39,12 @@ class ExpenseReport {
             case .carRental:
                 name = "Car Rental"
             }
-            
+
             printer.print(
-                text: String(format: "%@\t%@\t$%.02f\n",
-                    ((expense.type == .dinner && expense.amount > 5000) ||
-                            (expense.type == .breakfast && expense.amount > 1000)) ? "X" : " ", name, Double(expense.amount) / 100.0))
-            
-            total += expense.amount
+                    text: String(format: "%@\t%@\t$%.02f\n",
+                            ((expense.type == .dinner && expense.amount > 5000) ||
+                                    (expense.type == .breakfast && expense.amount > 1000)) ? "X" : " ", name, Double(expense.amount) / 100.0))
+
         }
         // 2. Extract Methd: printTotalas
         printTotals(printer: printer, mealExpenses: mealExpenses, total: total)
