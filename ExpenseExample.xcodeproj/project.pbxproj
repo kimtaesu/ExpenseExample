@@ -18,6 +18,7 @@
 		2FECCD1B238F7B63003DF3E5 /* ReportPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD18238F7B63003DF3E5 /* ReportPrinter.swift */; };
 		2FECCD1C238F7B63003DF3E5 /* ExpenseReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD19238F7B63003DF3E5 /* ExpenseReport.swift */; };
 		2FECCD1D238F7B63003DF3E5 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECCD1A238F7B63003DF3E5 /* Expense.swift */; };
+		69B49F57EC20582A7C95B1EC /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 69B49E8BCE69E07C6AF1E0BE /* Readme.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		2FECCD18238F7B63003DF3E5 /* ReportPrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPrinter.swift; sourceTree = "<group>"; };
 		2FECCD19238F7B63003DF3E5 /* ExpenseReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseReport.swift; sourceTree = "<group>"; };
 		2FECCD1A238F7B63003DF3E5 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		69B49E8BCE69E07C6AF1E0BE /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				2FECCCEE238F7B2A003DF3E5 /* ExpenseExample */,
 				2FECCD05238F7B2B003DF3E5 /* ExpenseExampleTests */,
 				2FECCCED238F7B2A003DF3E5 /* Products */,
+				69B49E8BCE69E07C6AF1E0BE /* Readme.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +229,7 @@
 				2FECCD1B238F7B63003DF3E5 /* ReportPrinter.swift in Sources */,
 				2FECCD1C238F7B63003DF3E5 /* ExpenseReport.swift in Sources */,
 				2FECCCF2238F7B2A003DF3E5 /* SceneDelegate.swift in Sources */,
+				69B49F57EC20582A7C95B1EC /* Readme.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

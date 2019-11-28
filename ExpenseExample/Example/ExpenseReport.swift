@@ -15,7 +15,7 @@ class ExpenseReport {
         var total = 0
         var mealExpenses = 0
 
-        printHeader(printer: printer)
+        printer.print(text: "Expenses \(getDate())\n")
         for expense in expenses {
 
             if expense.type == .breakfast || expense.type == .dinner {
@@ -48,11 +48,7 @@ class ExpenseReport {
     func addExpense(expense: Expense) {
         expenses.append(expense)
     }
-        
-    private func printHeader(printer: ReportPrinter) {
-        printer.print(text: "Expenses \(getDate())\n")
-    }
-    
+
     private func getDate() -> String {
         return "9/12/2002"
     }
