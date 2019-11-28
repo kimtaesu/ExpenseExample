@@ -71,13 +71,17 @@ class ExpenseReport {
 
     private func totalsUpExpenses() {
         for expense in expenses {
-
-            if expense.type == .breakfast || expense.type == .dinner {
-                mealExpenses += expense.amount
-            }
-
-            total += expense.amount
+            // 11. Extract Method: totalUpExpense
+            totalUpExpense(expense: expense)
         }
+    }
+
+    private func totalUpExpense(expense: Expense) {
+        if expense.type == .breakfast || expense.type == .dinner {
+            mealExpenses += expense.amount
+        }
+
+        total += expense.amount
     }
 
     // 6. Change Signature 기능이 없음
