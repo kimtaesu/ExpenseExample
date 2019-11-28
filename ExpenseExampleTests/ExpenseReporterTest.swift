@@ -9,6 +9,17 @@
 import XCTest
 @testable import ExpenseExample
 
+// 21 Create Class File
+class DinnerExpense: Expense {
+}
+
+class BreakfastExpense: Expense {
+}
+
+class CarRentalExpense: Expense {
+}
+
+
 // 18. Rename File: [ExpenseReporter]
 
 // 19: Delegate: [totalsUpExpenses, totalUpExpense, addExpense]
