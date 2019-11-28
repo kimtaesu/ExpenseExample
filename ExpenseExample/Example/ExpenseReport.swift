@@ -13,9 +13,13 @@ class ExpenseReport {
     var mealExpenses = 0
     var total = 0
 
+    var printer: ReportPrinter!
+    // 6. Change Signature 기능이 없음
+
     func printReport(printer: ReportPrinter) {
+        self.printer = printer
         // 1. Extract Methd: printHeader
-        printHeader(printer: printer)
+        printHeader()
 
         // 3. 책임 분리: [비용 계산, 비용 출력]
 
@@ -23,12 +27,13 @@ class ExpenseReport {
         totalsUpExpenses()
 
         // 5. Extract Method: printExpenses
-        printExpenses(printer: printer)
+        printExpenses()
         // 2. Extract Methd: printTotalas
-        printTotals(printer: printer, mealExpenses: mealExpenses, total: total)
+        printTotals(mealExpenses: mealExpenses, total: total)
     }
 
-    private func printExpenses(printer: ReportPrinter) {
+    // 6. Change Signature 기능이 없음
+    private func printExpenses() {
         for expense in expenses {
             var name = "TILT"
 
@@ -60,12 +65,14 @@ class ExpenseReport {
         }
     }
 
-    private func printTotals(printer: ReportPrinter, mealExpenses: Int, total: Int) {
+    // 6. Change Signature 기능이 없음
+    private func printTotals(mealExpenses: Int, total: Int) {
         printer.print(text: String(format: "\nMeal expenses $%.02f", Double(mealExpenses) / 100.0))
         printer.print(text: String(format: "\nTotal $%.02f", Double(total) / 100.0))
     }
 
-    private func printHeader(printer: ReportPrinter) {
+    // 6. Change Signature 기능이 없음
+    private func printHeader() {
         printer.print(text: "Expenses \(getDate())\n")
     }
 
