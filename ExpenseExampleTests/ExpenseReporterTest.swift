@@ -9,6 +9,7 @@
 import XCTest
 @testable import ExpenseExample
 
+
 // 21 Create Class File
 
 // 22 create Init()
@@ -16,17 +17,51 @@ class DinnerExpense: Expense {
     init(amount: Int) {
         super.init(type: .dinner, amount: amount)
     }
+
+    override func isMeal(expense: Expense) -> Bool {
+        return super.isMeal(expense: expense)
+    }
+
+    override func getName(expense: Expense) -> String {
+        return super.getName(expense: expense)
+    }
+
+    override func isOverage(expense: Expense) -> Bool {
+        return super.isOverage(expense: expense)
+    }
 }
 
 class BreakfastExpense: Expense {
     init(amount: Int) {
         super.init(type: .breakfast, amount: amount)
     }
+    override func isMeal(expense: Expense) -> Bool {
+        return super.isMeal(expense: expense)
+    }
+
+    override func getName(expense: Expense) -> String {
+        return super.getName(expense: expense)
+    }
+
+    override func isOverage(expense: Expense) -> Bool {
+        return super.isOverage(expense: expense)
+    }
 }
 
 class CarRentalExpense: Expense {
     init(amount: Int) {
         super.init(type: .carRental, amount: amount)
+    }
+    override func isMeal(expense: Expense) -> Bool {
+        return super.isMeal(expense: expense)
+    }
+
+    override func getName(expense: Expense) -> String {
+        return super.getName(expense: expense)
+    }
+
+    override func isOverage(expense: Expense) -> Bool {
+        return super.isOverage(expense: expense)
     }
 }
 
