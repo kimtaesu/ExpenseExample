@@ -15,7 +15,8 @@ class ExpenseReport {
         var total = 0
         var mealExpenses = 0
 
-        printer.print(text: "Expenses \(getDate())\n")
+        // 1. Extract Methd: printHeader
+        printHeader(printer: printer)
         for expense in expenses {
 
             if expense.type == .breakfast || expense.type == .dinner {
@@ -44,7 +45,11 @@ class ExpenseReport {
         printer.print(text: String(format: "\nMeal expenses $%.02f", Double(mealExpenses) / 100.0))
         printer.print(text: String(format: "\nTotal $%.02f", Double(total) / 100.0))
     }
-    
+
+    private func printHeader(printer: ReportPrinter) {
+        printer.print(text: "Expenses \(getDate())\n")
+    }
+
     func addExpense(expense: Expense) {
         expenses.append(expense)
     }
