@@ -18,7 +18,14 @@ class ExpenseReport {
 
     func printReport(printer: ReportPrinter) {
         self.printer = printer
-        // 1. Extract Methd: printHeader
+
+        // 7. Extract Method: printExpensesAndTotals
+        printExpensesAndTotals()
+        // 2. Extract Methd: printTotalas
+        printTotals(mealExpenses: mealExpenses, total: total)
+    }
+
+    private func printExpensesAndTotals() { // 1. Extract Methd: printHeader
         printHeader()
 
         // 3. 책임 분리: [비용 계산, 비용 출력]
@@ -28,8 +35,6 @@ class ExpenseReport {
 
         // 5. Extract Method: printExpenses
         printExpenses()
-        // 2. Extract Methd: printTotalas
-        printTotals(mealExpenses: mealExpenses, total: total)
     }
 
     // 6. Change Signature 기능이 없음
