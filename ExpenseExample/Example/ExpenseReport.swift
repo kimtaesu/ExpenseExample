@@ -22,6 +22,13 @@ class ExpenseReport {
         // 4. Extract Method: totalsUpExpenses
         totalsUpExpenses()
 
+        // 5. Extract Method: printExpenses
+        printExpenses(printer: printer)
+        // 2. Extract Methd: printTotalas
+        printTotals(printer: printer, mealExpenses: mealExpenses, total: total)
+    }
+
+    private func printExpenses(printer: ReportPrinter) {
         for expense in expenses {
             var name = "TILT"
 
@@ -40,8 +47,6 @@ class ExpenseReport {
                                     (expense.type == .breakfast && expense.amount > 1000)) ? "X" : " ", name, Double(expense.amount) / 100.0))
 
         }
-        // 2. Extract Methd: printTotalas
-        printTotals(printer: printer, mealExpenses: mealExpenses, total: total)
     }
 
     private func totalsUpExpenses() {
